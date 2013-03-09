@@ -20,7 +20,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:onClick="kasvataLevelia"
-        android:text="Kasvata" />
+        android:text="@string/kasvata" />
 
     <TextView
         android:id="@+id/leveliTekstiNumero"
@@ -28,7 +28,10 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/leveliNappiKasvatus"
         android:layout_centerHorizontal="true"
-        android:text="0"
+        android:clickable="false"
+        android:editable="false"
+        android:longClickable="false"
+        android:text="@string/leveli_numero"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -37,7 +40,9 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/leveliTekstiNumero"
         android:layout_centerHorizontal="true"
-        android:text="Levelisi:"
+        android:clickable="false"
+        android:longClickable="false"
+        android:text="@string/levelisi_"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

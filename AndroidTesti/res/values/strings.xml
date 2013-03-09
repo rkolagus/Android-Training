@@ -4,5 +4,8 @@
     <string name="app_name">AndroidTesti</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="kasvata">Kasvata</string>
+    <string name="levelisi_">Levelisi:</string>
+    <string name="leveli_numero">0</string>
 
 </resources>

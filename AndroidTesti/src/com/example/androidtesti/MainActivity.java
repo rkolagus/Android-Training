@@ -1,19 +1,23 @@
 package com.example.androidtesti;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	
-	int level;
+	int level = 1;
+	TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        level = 1;
-    }
+        textView = (TextView) findViewById(R.id.leveliTekstiNumero);
+    	textView.setText("" + level);
+	}
 
 
     @Override
@@ -23,8 +27,10 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    public void kasvataLevelia(){
-    	level++;
+    /* Kutsutaan Kasvata-nappia painettaessa */
+    public void kasvataLevelia(View view){
+    	this.level++;
+    	textView.setText("" + level);
     }
     
 }
