@@ -8,13 +8,14 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	
-	int level = 1;
+	int level;
 	TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        level = 1;
         textView = (TextView) findViewById(R.id.leveliTekstiNumero);
     	textView.setText("" + level);
 	}
