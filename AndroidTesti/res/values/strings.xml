@@ -7,5 +7,7 @@
     <string name="kasvata">Kasvata</string>
     <string name="levelisi_">Levelisi:</string>
     <string name="leveli_numero">0</string>
+    <string name="title_activity_listan_aktiviteetti">ListanAktiviteetti</string>
+    <string name="list_row_activity_numero">Tähän numero</string>
 
 </resources>

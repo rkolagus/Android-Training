@@ -9,24 +9,27 @@
     tools:context=".MainActivity" >
 
     <TextView
+        android:id="@+id/listRowActivity_tekstiKentta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
-    <Button
-        android:id="@+id/leveliNappiKasvatus"
+    <TextView
+        android:id="@+id/leveliTekstiOtsikko"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/listRowActivity_tekstiKentta"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:onClick="kasvataLevelia"
-        android:text="@string/kasvata" />
+        android:clickable="false"
+        android:longClickable="false"
+        android:text="@string/levelisi_"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/leveliTekstiNumero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/leveliNappiKasvatus"
+        android:layout_below="@+id/leveliTekstiOtsikko"
         android:layout_centerHorizontal="true"
         android:clickable="false"
         android:editable="false"
@@ -34,15 +37,33 @@
         android:text="@string/leveli_numero"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:id="@+id/leveliTekstiOtsikko"
+    <Button
+        android:id="@+id/leveliNappiKasvatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/leveliTekstiNumero"
+        android:layout_below="@+id/leveliTekstiNumero"
         android:layout_centerHorizontal="true"
-        android:clickable="false"
-        android:longClickable="false"
-        android:text="@string/levelisi_"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:onClick="kasvataLevelia"
+        android:text="@string/kasvata" />
+
+    <ListView
+        android:id="@+id/main_kuva_numero_lista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/listRowActivity_tekstiKentta"
+        android:layout_below="@+id/leveliNappiKasvatus"
+        tools:listitem="@layout/activity_list_row_activity" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/listRowActivity_nappi_animaatio1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="uusiAktiviteetti"
+        android:text="Uusi" />
 
 </RelativeLayout>

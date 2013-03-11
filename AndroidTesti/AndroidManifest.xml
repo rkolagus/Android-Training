@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.androidtesti.ListRowActivity"
+            android:label="@string/title_activity_listan_aktiviteetti"
+            android:parentActivityName="com.example.androidtesti.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.androidtesti.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
