@@ -9,44 +9,43 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ListRowActivity" >
 
-    <Button
-        android:id="@+id/listRowActivity_nappi_animaatio2"
-        style="?android:attr/buttonStyleSmall"
+    <TextView
+        android:id="@+id/listRowActivity_tekstiKentta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:onClick="animaatioKaksi"
-        android:text="Animaatio 2" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/list_row_activity_numero"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/listRowActivity_kuvaKentta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/listRowActivity_tekstiKentta"
+        android:layout_centerHorizontal="true"
+        android:src="@android:drawable/btn_star_big_on" />
 
     <Button
         android:id="@+id/listRowActivity_nappi_animaatio1"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/listRowActivity_nappi_animaatio2"
-        android:layout_alignLeft="@+id/listRowActivity_nappi_animaatio2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:onClick="animaatioYksi"
-        android:text="Animaatio 1" />
+        android:text="Animaatio 1"
+        android:visibility="gone" />
 
-    <LinearLayout
-        android:id="@+id/listRowActivity_riviLayout"
+    <Button
+        android:id="@+id/listRowActivity_nappi_animaatio2"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/listRowActivity_nappi_animaatio1" >
-
-        <ImageView
-            android:id="@+id/listRowActivity_kuvaKentta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/btn_star_big_on" />
-
-        <TextView
-            android:id="@+id/listRowActivity_tekstiKentta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/list_row_activity_numero"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="animaatioKaksi"
+        android:text="Animaatio 2"
+        android:visibility="gone" />
 
 </RelativeLayout>

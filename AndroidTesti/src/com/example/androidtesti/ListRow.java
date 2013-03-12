@@ -16,6 +16,6 @@ public class ListRow {
 	}
 	
 	public final Drawable getImageDrawable(){
-		return kuva;
+	    return kuva;
 	}
 }

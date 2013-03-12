@@ -31,6 +31,8 @@ public class ListRowActivity extends Activity {
 		numeroTeksti.setText("" + numero);
 		
 		kuva = findViewById(R.id.listRowActivity_kuvaKentta);
+		this.findViewById(R.id.listRowActivity_nappi_animaatio1).setVisibility(View.VISIBLE);
+		this.findViewById(R.id.listRowActivity_nappi_animaatio2).setVisibility(View.VISIBLE);
 	}
 
 	/**

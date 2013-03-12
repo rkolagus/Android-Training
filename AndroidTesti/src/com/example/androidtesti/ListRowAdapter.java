@@ -23,7 +23,7 @@ public class ListRowAdapter extends ArrayAdapter<ListRow> {
 
 		if (convertView == null) {
 			LayoutInflater inflater = LayoutInflater.from(getContext());
-			convertView = inflater.inflate(R.layout.activity_list_row_activity, parent, false);
+			convertView = inflater.inflate(/*R.layout.list_layout*/R.layout.activity_list_row_activity, parent, false);
 			convertView.setTag(new ViewHolder(convertView));
 		}
 
@@ -31,7 +31,7 @@ public class ListRowAdapter extends ArrayAdapter<ListRow> {
 		ListRow item = getItem(position);
 
 	    viewHolder.text.setText("" + item.numero);
-	    viewHolder.image.setImageDrawable(item.kuva);
+	    viewHolder.image.setImageDrawable(item.getImageDrawable());
 
 	    return convertView;
 	}
