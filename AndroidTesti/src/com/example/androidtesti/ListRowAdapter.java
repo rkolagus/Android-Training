@@ -21,6 +21,7 @@ public class ListRowAdapter extends ArrayAdapter<ListRow> {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
+		
 
 		if (convertView == null) {
 			LayoutInflater inflater = LayoutInflater.from(getContext());
