@@ -1,12 +1,9 @@
 package com.example.androidtesti;
 
-import android.graphics.drawable.Drawable;
-
 public class ListRow {
-	int numero;
-	Drawable kuva;
+	public final int numero, kuva;
 
-	public ListRow(Drawable kuva, int numero){
+	public ListRow(int kuva, int numero){
 		this.numero = numero;
 		this.kuva = kuva;
 	}
@@ -15,7 +12,7 @@ public class ListRow {
 		return "" + this.numero;
 	}
 	
-	public final Drawable getImageDrawable(){
+	public final int getKuva(){
 	    return kuva;
 	}
 }

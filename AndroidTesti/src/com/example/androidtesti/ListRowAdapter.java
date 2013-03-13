@@ -12,40 +12,54 @@ import android.widget.TextView;
 
 public class ListRowAdapter extends ArrayAdapter<ListRow> {
 
-	public ListRowAdapter(Context context, int textViewResourceId, List<ListRow> objects) {
+	MainActivity mainActivity;
+
+	public ListRowAdapter(Context context, int textViewResourceId,
+			List<ListRow> objects) {
 		super(context, textViewResourceId, objects);
-		
 	}
-	
+
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 
-
 		if (convertView == null) {
 			LayoutInflater inflater = LayoutInflater.from(getContext());
-			convertView = inflater.inflate(/*R.layout.list_layout*/R.layout.activity_list_row_activity, parent, false);
+			convertView = inflater.inflate(R.layout.activity_list_row_activity,
+					parent, false);
 			convertView.setTag(new ViewHolder(convertView));
 		}
 
 		ViewHolder viewHolder = (ViewHolder) convertView.getTag();
 		ListRow item = getItem(position);
 
-	    viewHolder.text.setText("" + item.numero);
-	    viewHolder.image.setImageDrawable(item.getImageDrawable());
+		viewHolder.text.setText("" + item.numero);
+		viewHolder.image.setImageDrawable(this.getContext().getResources()
+				.getDrawable(item.kuva));
 
-	    return convertView;
+		if (mainActivity != null) {
+			if (position >= mainActivity.rivilista.size() - 20
+					&& mainActivity.rivilista.size() < mainActivity.listakoko) {
+				mainActivity.growList(position);
+			}
+		}
+
+		return convertView;
 	}
-	
-	
+
+	public void setMainActivity(MainActivity mainActivity) {
+		this.mainActivity = mainActivity;
+	}
 
 	private static class ViewHolder {
-	    final TextView text;
-	    final ImageView image;
-	    
-	    public ViewHolder(View convertView) {
-	        text = (TextView) convertView.findViewById(R.id.listRowActivity_tekstiKentta);
-	        image = (ImageView) convertView.findViewById(R.id.listRowActivity_kuvaKentta);
-	    }
+		final TextView text;
+		final ImageView image;
+
+		public ViewHolder(View convertView) {
+			text = (TextView) convertView
+					.findViewById(R.id.listRowActivity_tekstiKentta);
+			image = (ImageView) convertView
+					.findViewById(R.id.listRowActivity_kuvaKentta);
+		}
 	}
 
 }

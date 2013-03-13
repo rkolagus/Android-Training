@@ -10,12 +10,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ListRowActivity extends Activity {
 
-	public int numero;
-	View kuva;
+
+	public ImageView kuva;
 	Animation animaatio;
 	TextView numeroTeksti;
 	
@@ -26,11 +27,12 @@ public class ListRowActivity extends Activity {
 		setupActionBar();
 		
 		Intent intent = getIntent();
-		numero = intent.getIntExtra("RivinNumero", 0);
+
 		numeroTeksti = (TextView) findViewById(R.id.listRowActivity_tekstiKentta);
-		numeroTeksti.setText("" + numero);
-		
-		kuva = findViewById(R.id.listRowActivity_kuvaKentta);
+		numeroTeksti.setText("" + intent.getIntExtra("RivinNumero", 0));
+		kuva = (ImageView) findViewById(R.id.listRowActivity_kuvaKentta);
+
+		kuva.setImageResource(intent.getIntExtra("RivinKuva", android.R.drawable.stat_notify_error));
 		this.findViewById(R.id.listRowActivity_nappi_animaatio1).setVisibility(View.VISIBLE);
 		this.findViewById(R.id.listRowActivity_nappi_animaatio2).setVisibility(View.VISIBLE);
 	}
