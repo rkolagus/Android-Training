@@ -88,7 +88,7 @@ public class MainActivity extends Activity {
 		listRowAdapter = new ListRowAdapter(this, R.layout.activity_list_row_activity, rivilista);
 		listRowAdapter.setMainActivity(this);
 		listView.setAdapter(listRowAdapter);
-		listView.post(new PositionFinder(position));
+		listView.post(new PositionFinder(position-5));
 	}
     private class PositionFinder implements Runnable {
     	int position;

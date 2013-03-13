@@ -26,7 +26,9 @@ public class ListRowAdapter extends ArrayAdapter<ListRow> {
 			LayoutInflater inflater = LayoutInflater.from(getContext());
 			convertView = inflater.inflate(R.layout.activity_list_row_activity,
 					parent, false);
+
 			convertView.setTag(new ViewHolder(convertView));
+
 		}
 
 		ViewHolder viewHolder = (ViewHolder) convertView.getTag();

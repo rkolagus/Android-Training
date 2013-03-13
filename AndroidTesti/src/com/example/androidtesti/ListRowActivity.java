@@ -35,6 +35,8 @@ public class ListRowActivity extends Activity {
 		kuva.setImageResource(intent.getIntExtra("RivinKuva", android.R.drawable.stat_notify_error));
 		this.findViewById(R.id.listRowActivity_nappi_animaatio1).setVisibility(View.VISIBLE);
 		this.findViewById(R.id.listRowActivity_nappi_animaatio2).setVisibility(View.VISIBLE);
+		//this.findViewById(R.id.listRowActivity_nappi_animaatio1).setEnabled(true);
+		//this.findViewById(R.id.listRowActivity_nappi_animaatio2).setEnabled(true);
 	}
 
 	/**
