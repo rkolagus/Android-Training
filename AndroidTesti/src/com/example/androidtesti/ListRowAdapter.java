@@ -36,8 +36,7 @@ public class ListRowAdapter extends ArrayAdapter<ListRow> {
 		ListRow item = getItem(position);
 
 		viewHolder.text.setText("" + item.numero);
-		viewHolder.image.setImageDrawable(this.getContext().getResources()
-				.getDrawable(item.kuva));
+		viewHolder.image.setImageResource(item.kuva);
 
 		if (mainActivity != null) {
 			if (position >= mainActivity.rivilista.size() - 20

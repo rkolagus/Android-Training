@@ -44,8 +44,8 @@
         android:id="@+id/listRowActivity_kuvaKentta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/listRowActivity_tekstiKentta"
-        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/listRowActivity_tekstiKentta"
+        android:layout_toLeftOf="@+id/listRowActivity_tekstiKentta"
         android:src="@android:drawable/btn_star_big_on" />
 
 </RelativeLayout>
