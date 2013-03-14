@@ -52,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/listRowActivity_tekstiKentta"
         android:layout_below="@+id/leveliNappiKasvatus"
+        android:fastScrollEnabled="true"
         tools:listitem="@layout/activity_list_row_activity" >
 
     </ListView>
