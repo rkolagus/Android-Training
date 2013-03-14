@@ -13,6 +13,8 @@ import android.widget.TextView;
 public class ListRowAdapter extends ArrayAdapter<ListRow> {
 
 	MainActivity mainActivity;
+	final static int kuvaYksi = android.R.drawable.btn_minus;
+	final static int kuvaKaksi = android.R.drawable.btn_plus;
 
 	public ListRowAdapter(Context context, int textViewResourceId,
 			List<ListRow> objects) {
@@ -33,17 +35,10 @@ public class ListRowAdapter extends ArrayAdapter<ListRow> {
 		}
 
 		ViewHolder viewHolder = (ViewHolder) convertView.getTag();
-		ListRow item = getItem(position);
+		// ListRow item = getItem(position);
 
-		viewHolder.text.setText("" + item.numero);
-		viewHolder.image.setImageResource(item.kuva);
-
-		if (mainActivity != null) {
-			if (position >= mainActivity.rivilista.size() - 20
-					&& mainActivity.rivilista.size() < mainActivity.listakoko) {
-				mainActivity.growList(position);
-			}
-		}
+		viewHolder.text.setText("" + position);
+		viewHolder.image.setImageResource(this.getKuva(position));
 
 		return convertView;
 	}
@@ -62,6 +57,18 @@ public class ListRowAdapter extends ArrayAdapter<ListRow> {
 			image = (ImageView) convertView
 					.findViewById(R.id.listRowActivity_kuvaKentta);
 		}
+	}
+	
+	@Override
+	public int getCount() {
+		return this.mainActivity.listakoko;
+	}
+
+	public int getKuva(int position) {
+		if (position % 5 == 0) {
+			return kuvaYksi;
+		}
+		return kuvaKaksi;
 	}
 
 }

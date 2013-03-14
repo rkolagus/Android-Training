@@ -20,8 +20,6 @@ public class MainActivity extends Activity {
 	ListRowAdapter listRowAdapter;
 	TextView textView;
 	ListView listView;
-	int kuvaYksi = android.R.drawable.btn_minus;
-	int kuvaKaksi = android.R.drawable.btn_plus;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +30,7 @@ public class MainActivity extends Activity {
 		textView.setText("" + level);
 		listView = (ListView) findViewById(R.id.main_kuva_numero_lista);
 		rivilista = new ArrayList<ListRow>();
-		this.growList(0);
+		
 		listRowAdapter = new ListRowAdapter(this, R.layout.activity_list_row_activity, rivilista);
 		listRowAdapter.setMainActivity(this);
 		listView.setAdapter(listRowAdapter);
@@ -41,9 +39,7 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				ListRow valittu = rivilista.get(position);
-				uusiAktiviteetti(view, valittu.kuva, valittu.numero);
-
+				uusiAktiviteetti(view, listRowAdapter.getKuva(position), position);
 			}
 		});
 	}
@@ -73,32 +69,6 @@ public class MainActivity extends Activity {
 
     	startActivity(intent);
     	
-    }
-    
-    public void growList(int position){
-		int loppukoko = rivilista.size() + 500;
-		for (int i = rivilista.size(); i < listakoko && i < loppukoko; i++) {
-			if (i % 10 == 0) {
-				rivilista.add(new ListRow(kuvaKaksi, i + 1));
-			} else {
-				rivilista.add(new ListRow(kuvaYksi, i + 1));
-			}
-
-		}
-		listRowAdapter = new ListRowAdapter(this, R.layout.activity_list_row_activity, rivilista);
-		listRowAdapter.setMainActivity(this);
-		listView.setAdapter(listRowAdapter);
-		listView.post(new PositionFinder(position-5));
-	}
-    private class PositionFinder implements Runnable {
-    	int position;
-    	public PositionFinder(int position){
-    		this.position = position;
-    	}
-        @Override
-        public void run() {
-            listView.setSelection(position);
-        }
     }
 
 }
